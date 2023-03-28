@@ -1,3 +1,35 @@
 p {
-  color: black;
+  color: green;
+}
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  background-color: blueviolet;
+  font-size: 30px;
+}
+
+.red-text {
+  color: red;
+  font-size: 18px;
+}
+
+/* .blue-text{
+  color: blue;
+} */
+
+.second-font {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#blue-text-id {
+  color: blue;
+}
+
+.bolded {
+  font-weight:bolder;
+}
+
+em {
+  font-style: normal;
+  text-decoration: underline;
 }

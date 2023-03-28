@@ -2,24 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My First Web Page</title>
+  <title>My Web Page</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <h1>Hello <em>with emphasis</em> world!</h1>
+  <header>
+    <h1>Hello <em>with emphasis</em> world!</h1>
+  </header>
+
+  <h2> Hello I am h2 </h2>
 
   <p>
-    It's way too early to be doing web programming, maybe?
+    It's way <span class="blue-text">too early to</span> be doing web programming, maybe?
   </p>
   <p>This is the third line</p>
 
+  <p class="red-text second-font">foo</p> <p>bar</p>
+
   <!-- inline elements -->
-  <p>
+  <p class="red-text" id="blue-text-id">
     <em>I'm emphasized!</em>
+    <strong>I'm bolded!</strong>
   </p>
+
+
   <p>
-    <a href="https://ischool.uw.edu">iSchool Homepage</a> Lorem ipsum dolor sit amet consectetur, <em>adipisicing elit.</em> Vel minima nesciunt veritatis ipsa fugiat voluptatibus molestias mollitia aliquam aliquid nobis eos impedit quas saepe quidem tempore at nemo, error beatae?
+    <span class="bolded"> I am a piece of text that is not strong but bolded</span>
   </p>
+
+  <p>
+    <a href="https://ischool.uw.edu" >iSchool Homepage</a>
+  </p>
+
+  <p>
+    Click <a href="https://ischool.uw.edu" aria-label="link to iSchool Homepage">here</a> to visit a campus website.
+  </p>
+  
+  <div class="gray-background">
+    <p>
+      Lorem ipsum dolor sit amet consectetur, <em>adipisicing elit.</em> Vel minima nesciunt veritatis ipsa fugiat voluptatibus molestias mollitia aliquam aliquid nobis eos impedit quas saepe quidem tempore at nemo, error beatae?
+    </p>
+
+    <!-- <p>
+      <img src="img/husky.jpeg">
+    </p> -->
+  </div>
 
   <p>
     <img src="img/husky.jpeg" alt="an adorable puppy">
@@ -36,6 +64,10 @@
     </li>
     <li>Budgies</li>
   </ul>
+
+  <footer>
+    &copy; Orson Xu
+  </footer>
 
 </body>
 
