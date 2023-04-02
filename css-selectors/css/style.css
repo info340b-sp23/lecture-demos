@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Helvetica';
+  color: white;
+  background-color: rebeccapurple;
+  padding: .5em;
+}
+
+/* all the headings should be in wingdings */
+
+h2, h3 {
+  color: rebeccapurple;
+  background-color: blanchedalmond;
+}
+
+.ugly-font {
+  font-family: 'Papyrus';
+}
+
+p,.alert {
+
+}
+
+p {
+  color: #333;
+}
+
+.about > p {
+  font-family: wingdings;
+}
+
+
+img {
+  max-height: 150px;
+  border-radius: 20px;
+}
+
+
+/* elements with class="about" */
+.about {
+  background-color: #eee;
+}
+
+a:hover, a:focus {
+  color: green;
+  font-size: 20px;
+}
+
+li:nth-child(3) a {
+  background-color: yellow;
+}
+
+
+.navbar .tab {
+}
+
+.tab.selected {
+
+}
+
