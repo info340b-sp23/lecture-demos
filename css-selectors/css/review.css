@@ -1,21 +1,21 @@
 
 /* Q1 */
 
-.alert.success {
-  color: yellow;
-}
+/* .alert.success {
+  color: yellowgreen;
+} */
 
-.alert .success {
-  color: yellow;
-}
+/* .alert .success {
+  color: yellowgreen;
+} */
 
 .alert, .success {
-  color: yellow
+  color: yellowgreen;
 }
 
-.alert--.success {
-  color: yellow
-}
+/* .alert--.success {
+  color: yellowgreen
+} */
 
 
 
@@ -23,10 +23,10 @@
 
 
 /* Q2 */
-/* .first.second { color: green};
-div > p { color: green; }
-div .second, #first { color: green; }
-p:last-child { color: green; }  */
+/* .first.second { color: green}; */
+/* div > p { color: green; } */
+/* div .second, #first { color: green; } */
+/* p:last-child { color: green; } */
 
 /* .first {
   background-color: aqua;
@@ -40,12 +40,12 @@ p:last-child { color: green; }  */
 
 /* Q3 */
 
-/* p { color: grey; }
+p { color: grey; }
 #red { color: red; }
 .blue { color: blue; }
 #red .blue { color: magenta; }
 .green p { color: lightgreen; }
-.green p.blue { color: cyan; } */
+/* .green p.blue { color: cyan; } */
 
 
 /* .forum-post {
