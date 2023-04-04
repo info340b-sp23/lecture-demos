@@ -9,11 +9,11 @@
   color: yellowgreen;
 } */
 
-.alert, .success {
+/* .alert, .success {
   color: yellowgreen;
 }
 
-/* .alert--.success {
+.alert--.success {
   color: yellowgreen
 } */
 
@@ -33,7 +33,9 @@
 } */
 
 
-
+p {
+  font-family: 'Times New Roman', Times, serif;
+}
 
 
 
@@ -45,7 +47,7 @@ p { color: grey; }
 .blue { color: blue; }
 #red .blue { color: magenta; }
 .green p { color: lightgreen; }
-/* .green p.blue { color: cyan; } */
+.green p.blue { color: cyan; }
 
 
 /* .forum-post {
