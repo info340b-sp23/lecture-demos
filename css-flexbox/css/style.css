@@ -1,0 +1,99 @@
+/* general styling */
+h1, h2, h3 {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+}
+
+h1 {
+    padding: 0;
+    margin: 1em;
+}
+
+h2 {
+    color: rebeccapurple;
+}
+
+
+/* nav bar */
+nav {
+    color: white;
+    background-color: #4b2e83;
+}
+
+nav a {
+    color: white;
+}
+
+nav li {
+    display: inline-block;
+    width: 150px;
+    /* background-color: green; */
+    padding: 10px;
+}
+
+/* .about img {
+    float: right;
+} */
+
+
+/* about section */
+.about {
+    background-color: #f8f8f8;
+    font-family: 'MacOnlyFont', 'Papyrus', sans-serif
+}
+
+.special {
+    display: block;
+    width: 200px;
+    height: 100px;
+}
+
+main {
+    display: flex;
+}
+
+.about {
+    flex-basis: 300px;
+    order: 1;
+}
+
+.courses {
+    order: 2;
+}
+
+/* course cards */
+
+.flex-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+}
+
+
+.courses .card {
+    border: 1px solid black;
+    /* border-top: 3px dotted red; */
+
+    flex-grow: 1;
+    flex-basis: 250px;
+    margin: 0 1em;
+    /* margin-bottom: .5em; */
+}
+
+.courses .card:nth-child(1) {
+    /* flex-grow: 1; */
+}
+
+.courses .card:nth-child(2) {
+    flex-grow: 2;
+}
+
+
+.courses img {
+    max-width: 150px;
+}
+
+/* other */
+footer {
+    font-size: smaller;
+}
+

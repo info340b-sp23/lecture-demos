@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+/* The section itself */
+.boxes {
+  /* makes the <section> a flexbox */
+  /* display: flex;  */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+
+}
+
+/* Each div in the "boxes" section */
+div {
+  /* flex-grow: 1; */
+  /* flex-basis: 100px; */
+
+  padding: .5em;
+  background-color: orange;
+  border: 2px solid rebeccapurple;
+  margin-bottom: .5em;
+  /* font-size: 2em; */
+}
+
+.e {
+  /* flex-grow: 2; */
+}
+
+.f {
+  /* flex-shrink: 0; */
+}
+
+
+h1, p {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: italic;
+}
+
+em {
+  /* display: none; */
+  width: 300px;
+  height: 200px;
+}
+
+li {
+  /* display: inline; */
+  /* display: inline-block; */
+
+  /* border-top: 4px dotted red; */
+
+  border: 1px solid black;
+
+
+  /* padding: 0.5em; */
+  /* padding-right: 3em; */
+
+  /* margin: 1em; */
+
+  background-color: lightblue;
+
+}
+
+/* .middle {
+  background-color: blue;
+} */
+
+
+
+
+
+/* images section */
+.images {
+  margin: 1em 0;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+  width: 300px;
+}
+
