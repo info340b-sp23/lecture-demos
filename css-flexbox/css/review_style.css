@@ -5,27 +5,30 @@
 /* The section itself */
 .boxes {
   /* makes the <section> a flexbox */
-  /* display: flex;  */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
+  display: flex;
+  
+  flex-wrap: wrap;
+  justify-content:right;
   /* align-items: center; */
 
 }
 
 /* Each div in the "boxes" section */
 div {
-  /* flex-grow: 1; */
-  /* flex-basis: 100px; */
+  flex-grow: 0;
+  flex-basis: 100px;
 
   padding: .5em;
   background-color: orange;
   border: 2px solid rebeccapurple;
   margin-bottom: .5em;
+
+  margin: 1em;
   /* font-size: 2em; */
 }
 
 .e {
-  /* flex-grow: 2; */
+  /* flex-grow: 0; */
 }
 
 .f {
@@ -40,26 +43,38 @@ h1, p {
 }
 
 em {
-  /* display: none; */
-  width: 300px;
-  height: 200px;
+  display: block;
+}
+
+ul {
+  font-size: 15px;
 }
 
 li {
-  /* display: inline; */
+  display: inline;
   /* display: inline-block; */
 
   /* border-top: 4px dotted red; */
 
-  border: 1px solid black;
+  /* border: 2px; */
+  border: 2px dotted red;
 
+  /* border-top: 4px solid green; */
+
+  padding: 10px;
+  padding-right: 30px;
 
   /* padding: 0.5em; */
   /* padding-right: 3em; */
 
+  margin: 10px;
+
   /* margin: 1em; */
 
   background-color: lightblue;
+
+  font-size: 2em;
+
 
 }
 
@@ -87,3 +102,8 @@ li {
   width: 300px;
 }
 
+
+
+/* .three {
+  color: green;
+} */
