@@ -1,0 +1,25 @@
+/* Your css here! */
+
+/* h1 {
+    margin-top: 1rem;
+} */
+
+
+/* .boxes div {
+    border: 1px solid purple;
+} */
+
+
+
+/* section - the pool itself */
+/* .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+} */
+
+/* things in the pools */
+/* .boxes div {
+    flex-grow: 1;
+    flex-basis: 200px;
+} */

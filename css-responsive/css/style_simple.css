@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+/** default **/
+body {
+  background-color: lightgrey;
+}
+
+.card {
+  background-color: white;
+}
+
+/* display box for my h1 */
+.center {
+  display:flex;
+  justify-content: center;
+}
+
+h1 {
+  background-color: lightgreen;
+  border: 1px solid black;
+  text-align: center;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.column div:nth-of-type(even) .card {
+  text-align: right;
+}
+
+/* the image section itself */
+/* contains 1 "column" of content */
+.images {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* the text citation */
+.images p {
+  flex-basis: 100%; /* fill section width */
+}
+
+/* a "column" that is a flexbox containing the cards */
+.column {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* each card lives in own private "pool" */
+.column > div {
+  display: flex;
+}
+
+/* card in the private pool */
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 1em;
+  margin-bottom: 1em;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+  width: 300px;
+}
+
+
+/* default rule */
+/* .card p {
+  display: none;
+} */
+
+/* STANDARD BREAKPOINTS: 576, 768, 992, 1200, 1400 */
+/*                       s   m     lg    xlg    xxlg
+
+/* if (size is at least 768px) */
+/* @media (min-width: 768px) {
+
+  body {
+    background-color: lightblue;
+  }
+
+  .card p {
+    display: block;
+  }
+
+  .column {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+} */
+
+/* if (size is at least 992px) */
+/* @media (min-width: 992px) {
+
+  body {
+    background-color: goldenrod;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .card img {
+    width: 600px;
+  }
+
+} */

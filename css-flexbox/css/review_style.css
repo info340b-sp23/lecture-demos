@@ -7,16 +7,17 @@
   /* makes the <section> a flexbox */
   display: flex;
   
-  flex-wrap: wrap;
-  justify-content:right;
+  /* flex-wrap: wrap; */
+  /* justify-content:right; */
   /* align-items: center; */
 
 }
 
 /* Each div in the "boxes" section */
 div {
-  flex-grow: 0;
-  flex-basis: 100px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 
   padding: .5em;
   background-color: orange;
@@ -103,7 +104,10 @@ li {
 }
 
 
+.one, .two {
 
-/* .three {
+}
+
+.three {
   color: green;
-} */
+}
