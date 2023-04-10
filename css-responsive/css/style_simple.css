@@ -68,9 +68,9 @@ h1 {
 
 
 /* default rule */
-/* .card p {
+.card p {
   display: none;
-} */
+}
 
 /* STANDARD BREAKPOINTS: 576, 768, 992, 1200, 1400 */
 /*                       s   m     lg    xlg    xxlg
@@ -89,6 +89,7 @@ h1 {
   .column {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 } */
 
@@ -99,12 +100,8 @@ h1 {
     background-color: goldenrod;
   }
 
-  .column {
-    flex-direction: column;
-  }
-
   .card img {
-    width: 600px;
+    width: 400px;
   }
 
 } */
