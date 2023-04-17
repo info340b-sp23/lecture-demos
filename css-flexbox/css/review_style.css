@@ -8,16 +8,20 @@
   display: flex;
   
   /* flex-wrap: wrap; */
-  /* justify-content:right; */
+  justify-content:center;
   /* align-items: center; */
 
 }
 
 /* Each div in the "boxes" section */
-div {
-  flex-grow: 1;
+section div {
+  /* flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 0;
+  flex-basis: 0; */
+
+  flex-basis: 150px;
+  flex-shrink: 1;
+  flex-grow:0;
 
   padding: .5em;
   background-color: orange;
@@ -28,8 +32,9 @@ div {
   /* font-size: 2em; */
 }
 
+
 .e {
-  /* flex-grow: 0; */
+  flex-grow: 0;
 }
 
 .f {

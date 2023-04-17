@@ -72,6 +72,34 @@ h1 {
   display: none;
 }
 
+@media (min-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .card p {
+    display: block;
+  }
+
+  .column {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px){
+  body {
+    background-color: lightpink;
+  }
+
+  .card img {
+    width: 400px;
+  }
+}
+
 /* STANDARD BREAKPOINTS: 576, 768, 992, 1200, 1400 */
 /*                       s   m     lg    xlg    xxlg
 
