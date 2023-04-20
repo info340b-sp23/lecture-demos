@@ -1,13 +1,227 @@
 'use strict';
+// console.log(peopleArray);
+
+
+
+typeof sayHello // 'function'
+const other = sayHello;
+const other2 = sayHello;
+
+// sayHello("I am sayHellow");
+// other('everyone');
+// other2("I am other 2");
+
+console.log([3,4,5,6]);
+
+//assign function to variable
+function sayHello(name) { 
+  console.log("I am sayHello "+name);
+}
+
+sayHello("I am sayHellow");
+
+const newFuncName = function (name) { 
+  console.log("I am newFuncName " + name);
+}
+
+const anotherFuntion = function() {
+  console.log("I am anotherFuntion");
+}
+
+newFuncName("I am newFuncName");
+
+const dog = {
+  name: "doggy",
+  speak: sayHello
+};
+
+// dog.speak("I am a dog");
+
+function doWorld(aFunction) {
+  aFunction(" INFO340");
+}
+
+// doWorld(sayHello);
+// doWorld(newFuncName);
+
+// doWorld(anotherFuntion);
+
+// doWorld(anotherFuntion());
+
+
+//takes in TWO callback functions!
+function doTogether(firstCallback, secondCallback){
+  firstCallback();  //execute the first function
+  secondCallback();  //execute the second function
+  console.log('at the "same time"!');
+}
+
+function patHead() {
+  console.log('pat your head');
+}
+
+function rubBelly() {
+  console.log('rub your belly');
+}
+
+//pass in the callbacks to do them together
+// doTogether(patHead, rubBelly);
+
+// doTogether(rubBelly, patHead);
+
+
+const numberArray = [934,12,42,246,2322,32];
+
+function sortByNumberValue(number1, number2){
+  if (number1 < number2){
+    return 1;
+  }
+  else if (number1 > number2){
+    return -1;
+  }
+  else {
+    return 0;
+  }
+}
+
+console.log(numberArray.sort(sortByNumberValue));
+
+function sortByPersonHeight(person1, person2){
+  if (person1["height"] < person2.height){
+    return -1;
+  }
+  else if (person1["height"] > person2["height"]){
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+function sortByPersonWeight(person1, person2){
+  if (person1["weight"] < person2.weight){
+    return -1;
+  }
+  else if (person1["weight"] > person2["weight"]){
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
 
 const peopleArray = [
   {name: 'Ada', height: 64, weight: 135},
   {name: 'Bob', height: 74, weight: 156},
-  {name: 'Chris', height: 69, weight: 139},
+  {name: 'Chris', height: 89, weight: 139},
   {name: 'Diya', height: 69, weight: 144},
   {name: 'Emma', height: 71, weight: 152}
 ]
-console.log(peopleArray);
+
+console.log(peopleArray.sort(sortByPersonWeight));
+
+const array = ['a','b','c'];
+const printItem = function(item) {
+   console.log(item + " in PrintIterm func");
+}
+
+const printItemFirstTwo = function(_, item, i) {
+  // console.log(item); 
+  console.log("index: "+i+" value: " + item); 
+} 
+
+const printItemComplete = function(theItem, index, theArray) {
+  //the item itself (e.g., `array[i]`` in a for loop)
+  console.log(theItem); 
+
+  //the index (e.g., `i` in a for loop). Rarely used.
+  console.log(index); 
+
+  //the array (e.g., `array` in a for loop). Never used.
+  console.log(theArray);
+} 
+
+printItemComplete(undefined, 2, [1,2]);
+
+array.forEach(printItemFirstTwo);
+
+// array.forEach(printItemComplete);
+
+// for (let i = 0; i < array.length; i ++){
+//   printItem(array[i], i, array);
+// }
+
+// function square(x){
+//   return x*x;
+// }
+const square = function(x){
+  return x*x;
+}
+
+const simpleNumberArray = [2,4,5,6];
+
+const output = simpleNumberArray.map(square);
+
+const output2 = simpleNumberArray.map(
+  (x) => x*x
+);
+
+// console.log(output);
+// console.log(output2);
+
+const numberArray2 = [3,1,4,2,5];
+
+const filterFunc = function(n) { 
+  return n > 3; //keep if > 3
+}
+
+const isACrowd = numberArray2.filter(filterFunc); //returns [3,4,5]
+
+console.log(isACrowd)
+
+function link(accumulation, newItem) { //combines two strings
+  const newAccumulation = accumulation + "->" + newItem;
+  return newAccumulation;
+}
+
+const letters = ['a','b','c','d','e'];  //an initial array
+
+// let linked = ""; //an accumulated aggregate, start at ""
+// for(let i=0; i<letters.length; i++){
+//   linked = link(linked, letters[i]);
+//   console.log(linked)
+// }
+// console.log(linked); //"->a->b->c->d->e"
+
+const longArray = [1,2,3,4,5,6,7,8,9,10]
+
+function reduceSum(accumulation, newValue){
+  console.log(accumulation)
+  return accumulation + newValue;
+}
+
+console.log(longArray.reduce(reduceSum, 0));
+
+const phoneDigits = [8, 6, 7, 1000, 5, 3, 0, 9,];
+
+console.log(
+  phoneDigits.reduce(
+    function(accumulation, number){
+      if (accumulation < number) {
+        return number;
+      }
+      else{
+        return accumulation;
+      }
+    }, -9999
+  )
+)
+
+// forEach = function(aFunc){
+//   for (let i = 0; i < this.array.length; i ++){
+//     aFunc(array[i], i, this.array);
+//   }
+// }
 
 // const sayHello = function(name) { 
 //   console.log("Hello, "+name);
