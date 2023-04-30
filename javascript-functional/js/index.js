@@ -65,7 +65,7 @@ function rubBelly() {
 }
 
 //pass in the callbacks to do them together
-// doTogether(patHead, rubBelly);
+doTogether(patHead, rubBelly);
 
 // doTogether(rubBelly, patHead);
 
