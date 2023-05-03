@@ -1,9 +1,26 @@
 'use strict';
 
-import {default as printFromOtherModule} from './other.js';
-import {printOtherSecond} from "./other.js";
-import printOtherDefault from "./other.js";
+// import {default as printFromOtherModule} from './other.js';
+// import {printOtherSecond} from "./other.js";
+// import printOtherDefault from "./other.js";
 
+// import bar from "./other.js"
+
+// import {default as bar}from "./other.js"
+
+import * as bar from "./other.js"
+
+// import {bar as bar} from "./other.js"
+
+bar.default();
+
+bar.default();
+
+bar.bar();
+
+const mesElem = <h1 id="hello" className="myclass">Hello World</h1>
+
+console.log(mesElem);
 
 // const peopleArray = [
 //   {firstname: 'Ada', height: 64, weight: 135},
@@ -12,10 +29,10 @@ import printOtherDefault from "./other.js";
 //   {firstname: 'Diya', height: 69, weight: 144},
 //   {firstname: 'Emma', height: 71, weight: 152}
 // ]
-
-printFromOtherModule("David");
-printOtherSecond("David2");
-printOtherDefault("Orson");
+// 
+// printFromOtherModule("David");
+// printOtherSecond("David2");
+// printOtherDefault("Orson");
 
 // function getName(personObj) {
 //   return personObj.name;

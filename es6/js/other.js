@@ -4,13 +4,23 @@
 
 // export const peopleArray = ["Ada", "Bob", "Charles"];
 
-export default function printOther(name) {
-    console.log("Hello " + name + "! I'm other!");
-}
 
-export function printOtherSecond(name) {
-  console.log("Hello " + name + "! I'm other second function!");
+export function foo(){
+  console.log("foo");
 }
+export function bar(){
+  console.log("bar");
+}
+export default function baz(){
+  console.log("baz");
+}
+// export default function printOther(name) {
+//     console.log("Hello " + name + "! I'm other!");
+// }
+
+// export function printOtherSecond(name) {
+//   console.log("Hello " + name + "! I'm other second function!");
+// }
 
 // console.log ("other people", peopleArray);
 
