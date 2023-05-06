@@ -1,0 +1,25 @@
+
+
+/** Messages **/
+.message img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.message p {
+  margin: 0;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+/** Channel Nav **/
+.channel-nav ul {
+  list-style-type: none;
+}
+
+.channel-nav a {
+  color: white;
+}

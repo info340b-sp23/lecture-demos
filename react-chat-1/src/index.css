@@ -1,0 +1,19 @@
+h1 {
+  color: wheat;
+}
+
+.message-item img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px ;
+}
+
+.message-item p {
+  margin: 0;
+}
+
+.user-name {
+  font-size: large;
+  font-weight: bold;
+}
