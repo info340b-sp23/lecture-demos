@@ -2,7 +2,35 @@ h1 {
   color: wheat;
 }
 
-.message-item img {
+.channel-list {
+  background-color: gainsboro;
+}
+
+.channel-list a {
+  background-color: wheat;
+}
+
+.user-message img {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+
+.message-pane {
+  background-color: lightblue;
+}
+
+.user-message .user-message-name {
+  font-weight: bold;
+  font-size: large;
+  color:blueviolet;
+}
+
+.click-string {
+  font-size: x-large;
+}
+
+/* .message-item img {
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -11,9 +39,9 @@ h1 {
 
 .message-item p {
   margin: 0;
-}
+} */
 
-.user-name {
+/* .user-name {
   font-size: large;
   font-weight: bold;
-}
+} */
