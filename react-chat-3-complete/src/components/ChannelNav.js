@@ -1,24 +1,27 @@
 import React from 'react';
 
 export function ChannelList(props) {
-  const setNewChannel = props.setNewChannel;
+  const {currentChannel, howToChangeTheChannel, channelMessageCounts} = props;
+
   //data! (an array of strings)
   const CHANNEL_NAMES_ARRAY = ['general', 'random', 'dank-memes', 'birds', 'channel-5'];
 
-  function handleClick(event){
+  const handleClick = (event) => {
     event.preventDefault();
-    const clickedChannel = event.target.text;
-    setNewChannel(clickedChannel);
+    console.log(event.target);
+    const chosenChannel = event.target.name;
+    howToChangeTheChannel(chosenChannel);
   }
 
   //content!! (an array of `<li>`)
   const liArray = CHANNEL_NAMES_ARRAY.map((channelNameString) => {
+    const count = channelMessageCounts[channelNameString] || 0;
     const liElem = (
       <li key={channelNameString}>
         <a 
-          onClick={handleClick}
           name={channelNameString}
-          href={"/"+channelNameString}>{channelNameString}</a>
+          onClick={handleClick}
+          href={"/"+channelNameString}>{channelNameString} ({count})</a>
       </li>
     )
     return liElem; //put it in the new array
