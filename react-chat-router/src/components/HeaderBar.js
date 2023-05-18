@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -15,24 +16,24 @@ export function HeaderBar(props) {
 
   return (
     <header className="text-light bg-primary px-1 d-flex justify-content-between">
-      <h1>React Chat</h1>
+      <h1>React Chat Firebase</h1>
 
       <nav>
         {/* links go here */}
         <ul className="nav nav-pills">
           <li className="nav-item">
-            <a className="nav-link" href="/">Home</a>
+            <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/chat">Chat</a>
+            <Link className="nav-link" to="/chating">Chat</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/about">About</a>
+            <Link className="nav-link" to="/about">About</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/signin">
+            <Link className="nav-link" to="/signin">
               <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

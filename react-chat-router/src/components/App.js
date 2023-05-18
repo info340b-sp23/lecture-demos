@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
+import {Routes, Route} from 'react-router-dom';
 
 import { HeaderBar } from './HeaderBar.js';
-import { ChannelList } from './ChannelNav.js';
-import { ChatPane } from './ChatPane.js';
 
 import ChatPage from './ChatPage';
 import SignInPage from './SignInPage';
@@ -13,7 +12,7 @@ import DEFAULT_USERS from '../data/users.json';
 
 function App(props) {
   const [messageObjArray, setMessageObjArray] = useState(INITIAL_HISTORY);
-  const [currentUser, setCurrentUser] = useState(DEFAULT_USERS[1]) //initially null;
+  const [currentUser, setCurrentUser] = useState(DEFAULT_USERS[0]) //initially null;
 
   const loginUser = (userObj) => {
     setCurrentUser(userObj);
@@ -35,16 +34,28 @@ function App(props) {
   return (
     <div className="container-fluid d-flex flex-column">
       <HeaderBar currentUser={currentUser} />
+      <Routes>
+        <Route path="chating/:channelID?" element={
+          <ChatPage 
+          currentUser={currentUser} 
+          messageArray={messageObjArray}
+          howToAddAMessage={addMessage}
+          />
+        }/>
+        <Route path="signin" element={<SignInPage currentUser={currentUser} loginUserFunction={loginUser} />} />
+        <Route path="/" element={<Static.WelcomePage />} />
+        {/* <Route path="about" element={<Static.AboutPage />} /> */}
 
-      <ChatPage 
-        currentUser={currentUser} 
-        messageArray={messageObjArray}
-        howToAddAMessage={addMessage}
-        />
-      {/* <SignInPage currentUser={currentUser} loginUserFunction={loginUser} /> */}
-      {/* <Static.WelcomePage /> */}
-      {/* <Static.AboutPage /> */}
-      {/* <Static.ErrorPage /> */}
+
+        <Route path="about" element={<Static.AboutPage />}>
+          <Route path="welcome" element={<Static.WelcomePage />} />
+          <Route path="error" element={<Static.ErrorPage />} />
+        </Route>
+
+        {/* <Route path="error" element={<Static.ErrorPage />} /> */}
+        <Route path="*" element={<Static.ErrorPage />} />
+
+      </Routes>
 
     </div>
   );

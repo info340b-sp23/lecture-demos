@@ -1,9 +1,16 @@
 import React, {useState} from 'react';
+import { useParams } from 'react-router-dom';
+
 import { ComposeForm } from './ComposeForm';
 
 export function ChatPane(props) {
 
-  const currentChannel = "general" //hard code for the moment
+
+  const params = useParams();
+  console.log(params)
+  const currentChannel = params.channelID || "general";
+
+  // const currentChannel = props.currentChannel || "general"; //hard code for the moment
   const messageObjArray = props.messageArray;
   const howToAddAMessage = props.howToAddAMessage;
   const currentUser = props.currentUser;
@@ -13,7 +20,7 @@ export function ChatPane(props) {
     .filter((messageObj) => {
       return messageObj.channel === currentChannel; //keep
     })
-    .sort((m1, m2) => m2.timestamp - m1.timestamp); //reverse chron order
+    .sort((m1, m2) => m1.timestamp - m2.timestamp); //reverse chron order
 
     const messageElemArray = messagesToShow.map((messageObj) => {
       const messageElem = <MessageItem
