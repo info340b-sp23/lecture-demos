@@ -9,6 +9,7 @@ const EXAMPLE_DATA = [
 
 
 function App(props) {
+
   const [stateData, setStateData] = useState(EXAMPLE_DATA);
   //control form
   const [queryInput, setQueryInput] = useState('');
@@ -18,17 +19,66 @@ function App(props) {
   }
 
 
+  useEffect(() => {
+    const first_url = "https://api.github.com/search/repositories?q=" + "start" + "&sort=stars";
+    const results = fetch(first_url)
+      .then( (response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setStateData(data.items)
+      })
+    // console.log("effect function");
+
+    function cleanup(){
+      console.log("cleanup function executed!");
+    }
+
+    return cleanup;
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     console.log(event)
     //do something with form input!
+
+    const url = "https://api.github.com/search/repositories?q=" + queryInput + "&sort=stars";
+    // const file_url = "./data.json"
+
+    const response = await fetch(url);
+    const data = await response.json();
+    setStateData(data.items);
+
+    // const results = fetch(url)
+    //   .then( (response) => {
+    //     // console.log(response);
+    //     const jsonresults = response.json();
+    //     return jsonresults;
+    //   })
+    //   .then((data) => {
+    //       // console.log(data);
+    //       // console.log(data.items[0])
+    //       setStateData(data.items)
+    //       // setStateData(data)
+    //   })
+    //   .catch((error) => {
+    //     console.error("This is an error: " + error);
+    //   })
+    //   .then(() => {
+    //     console.log("I will be executed anyway...")
+    //   })
+    
   }
 
 
   //render the data
   const dataElemArray = stateData.map((repo) => {
-    return <li key={repo.html_url}><a href={repo.html_url}>{repo.full_name}</a></li>
+    if (!repo.owner){
+      return <li key={repo.html_url}><a href={repo.html_url}>{repo.full_name}</a></li>
+    } else {
+    return <li key={repo.html_url}><a href={repo.html_url}>{repo.full_name}</a> (<a href={repo.owner.html_url}>Owner</a>) </li>
+    }
   })
 
   return (
@@ -43,7 +93,7 @@ function App(props) {
           value={queryInput} onChange={handleChange}
         />
         <input type="hidden" name="sort" value="stars" />
-        <button type="submit" className="btn btn-primary">Search!</button>
+        <button onClick={handleSubmit} type="submit" className="btn btn-primary">Search!</button>
       </form>
 
       <div className="mt-4">
