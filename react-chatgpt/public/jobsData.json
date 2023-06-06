@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Acme Inc",
+      "location": "New York, NY",
+      "description": "We are seeking a skilled Frontend Developer with experience in React.js and JavaScript."
+    },
+    {
+      "id": 2,
+      "title": "Full Stack Developer",
+      "company": "Widgets Co",
+      "location": "San Francisco, CA",
+      "description": "Join our team as a Full Stack Developer and contribute to exciting projects using Node.js and React."
+    },
+    {
+      "id": 3,
+      "title": "UI/UX Designer",
+      "company": "Design Studio",
+      "location": "London, UK",
+      "description": "We are looking for a talented UI/UX Designer with a strong portfolio and expertise in user-centered design principles."
+    },
+    {
+    "id": 4,
+    "title": "Data Scientist",
+    "company": "Tech Solutions",
+    "location": "Berlin, Germany",
+    "description": "Join our Data Science team and use your analytical skills to derive insights from complex datasets."
+    },
+    {
+    "id": 5,
+    "title": "Product Manager",
+    "company": "Innovative Tech",
+    "location": "Seattle, WA",
+    "description": "Seeking an experienced Product Manager to lead the development and launch of new software products."
+    }
+]
+  

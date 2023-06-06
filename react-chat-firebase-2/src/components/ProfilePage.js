@@ -24,6 +24,18 @@ export default function ProfilePage(props) {
   const handleImageUpload = (event) => {
     console.log("Uploading", imageFile);
     // upload the data
+    const storage = getStorage();
+    const imageRef = firebaseStorageRef(storage, "images/image.png");
+    const uploadResults = uploadBytes(imageRef, imageFile);
+    uploadResults.then((results) =>{
+      console.log("done");
+      return getDownloadURL(imageRef)
+    }).then((results) =>{
+      console.log(results);
+      props.currentUser.userImg = results;
+      const newUser = {...props.currentUser};
+      props.setCurrentUser(newUser);
+    })
   }
 
   return (

@@ -1,7 +1,29 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 
+import { getAuth, EmailAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth'
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'; //install option 1
+
+
 import DEFAULT_USERS from '../data/users.json';
+
+//an object of configuration values
+const firebaseUIConfig = {
+  signInOptions: [ //array of sign in options supported
+    //array can include just "Provider IDs", or objects with the IDs and options
+    { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
+    GoogleAuthProvider.PROVIDER_ID,
+    TwitterAuthProvider.PROVIDER_ID,
+  ],
+  signInFlow: 'popup', //don't redirect to authenticate
+  credentialHelper: 'none', //don't show the email account chooser
+  callbacks: { //"lifecycle" callbacks
+    signInSuccessWithAuthResult: () => {
+      return false; //don't redirect after authentication
+    }
+  }
+}
+
 
 export default function SignInPage(props) {
   const currentUser = props.currentUser;
@@ -17,7 +39,7 @@ export default function SignInPage(props) {
 
   // convenience
   const userButtons = DEFAULT_USERS.map((userObj) => {
-    console.log(currentUser);
+    // console.log(currentUser);
     if (!currentUser || currentUser.userId){
       return null;
     }
@@ -37,7 +59,8 @@ export default function SignInPage(props) {
   return (
     <div className="card bg-light">
       <div className="container card-body">
-        <p className="lead">Pick a user:</p>
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={getAuth()} />
+        {/* <p className="lead">Pick a user:</p>
         <Dropdown>
           <Dropdown.Toggle variant="light">
             <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
@@ -45,7 +68,7 @@ export default function SignInPage(props) {
           <Dropdown.Menu>
             {userButtons}
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown> */}
       </div>
     </div>
   )

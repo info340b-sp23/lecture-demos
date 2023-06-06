@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink, Navigate, useNavigate } from 'react-router-dom';
+import {getAuth, signOut} from 'firebase/auth';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DEFAULT_USERS from '../data/users.json';
 
@@ -10,6 +11,7 @@ export function HeaderBar(props) {
   const handleSignOut = (event) => {
     console.log("signing out");
     navigateTo("");
+    signOut(getAuth());
   }
 
   return (

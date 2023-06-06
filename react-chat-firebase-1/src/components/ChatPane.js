@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { ComposeForm } from './ComposeForm';
+import { getDatabase, ref as firebaseDatabaseRef, set as firebaseDatabaseSet} from 'firebase/database';
 
 import { useParams } from 'react-router-dom';
 
@@ -15,7 +16,10 @@ export function ChatPane(props) {
 
   const handleTestClick = (event) => {
     console.log("testing...");
+    const db = getDatabase();
 
+    const dataRef = firebaseDatabaseRef(db, "messages/new_message");
+    firebaseDatabaseSet(dataRef, "I am a new message");
   }
 
   //what we look like

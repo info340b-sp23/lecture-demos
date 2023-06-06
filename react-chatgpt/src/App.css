@@ -1,0 +1,81 @@
+/* App.css */
+.app {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.job-search-form {
+  margin-bottom: 2rem;
+}
+
+.job-search-form input {
+  padding: 0.5rem;
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.job-search-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.job-search-form button:hover {
+  background-color: #0056b3;
+}
+
+.job-list {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.job-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-list li {
+  margin-bottom: 1.5rem;
+}
+
+.job-list h3 {
+  margin-bottom: 0.5rem;
+}
+
+.job-list .company {
+  font-weight: bold;
+}
+
+.job-list .location {
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card .company {
+  font-weight: bold;
+}
+
+.card .location {
+  color: #777;
+  margin-bottom: 0.5rem;
+}

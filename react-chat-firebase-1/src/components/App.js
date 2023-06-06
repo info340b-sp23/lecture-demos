@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import { Routes, Route, Outlet, Navigate, useNavigate } from 'react-router-dom';
+import { getDatabase, ref as firebaseDatabaseRef, set as firebaseDatabaseSet, onValue, push as firebaseDatabasePush} from 'firebase/database';
 
 import { HeaderBar } from './HeaderBar.js';
 
@@ -23,6 +24,35 @@ function App(props) {
     //log in a default user
     loginUser(DEFAULT_USERS[0])
 
+    const db = getDatabase();
+    // const messageRef = firebaseDatabaseRef(db, "one_message")
+    // onValue(messageRef, (snapshot) => {
+    //   // console.log(snapshot.val());
+    //   const messageObj = snapshot.val();
+    //   const newMessageArray = [...messageObjArray, messageObj];
+    //   setMessageObjArray(newMessageArray); //update state & rerender
+    // })
+
+    const allMessagesRef = firebaseDatabaseRef(db, "allMessages")
+    onValue(allMessagesRef, (snapshot) => {
+      // console.log(snapshot.val());
+      const allMessagesObj = snapshot.val();
+      // console.log(allMessagesObj);
+      
+      const allKeys = Object.keys(allMessagesObj);
+      const allMessageArray = allKeys.map((key) => {
+        allMessagesObj[key].key = key;
+        // console.log(allMessagesObj[key])
+        return allMessagesObj[key]
+      })
+
+      const newMessageArray = [...INITIAL_HISTORY, ...allMessageArray];
+      console.log("this is the whole array", newMessageArray);
+      setMessageObjArray(newMessageArray); //update state & rerender
+    })
+
+
+
   }, []) //array is list of variables that will cause this to rerun if changed
 
   const loginUser = (userObj) => {
@@ -42,8 +72,16 @@ function App(props) {
       "timestamp": Date.now(),
       "channel": channel
     }
-    const newMessageArray = [...messageObjArray, newMessageObj];
-    setMessageObjArray(newMessageArray); //update state & rerender
+    // const newMessageArray = [...messageObjArray, newMessageObj];
+    // setMessageObjArray(newMessageArray); //update state & rerender
+
+    const db = getDatabase();
+
+    // const dataRef = firebaseDatabaseRef(db, "one_message");
+    // firebaseDatabaseSet(dataRef, newMessageObj);
+
+    const messageArrayRef = firebaseDatabaseRef(db, "allMessages");
+    firebaseDatabasePush(messageArrayRef, newMessageObj);
 
   }
 
